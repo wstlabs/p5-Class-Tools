@@ -19,7 +19,7 @@ package main;
 use strict;
 use warnings;
 use Class::Tools qw( :all );
-use Log::Inline;
+use Log::EZ;
 
 our $DEBUG = 1;
 
