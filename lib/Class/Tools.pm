@@ -10,13 +10,13 @@ use Class::Inspector;
 use Module::Load; 
 use Class::Unload;
 use Exporter::Tidy
-    -default => [qw|
+    other => [qw|
         is_valid_class_name
         get_package_version
         find_package_version
         find_parent_classes 
     |],
-    -deprecated => [qw|
+    deprecated => [qw|
         is_loaded
     |]
 ;
