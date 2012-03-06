@@ -12,7 +12,9 @@ WriteMakefile(
       : ()),
     PL_FILES            => {},
     PREREQ_PM => {
-        'Test::More' => 0,
+        'Exporter::Tidy' => '0.07',
+        'Module::Load'   => '0.12',
+        'Test::More'     => '0.96',
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Class-Tools-*' },

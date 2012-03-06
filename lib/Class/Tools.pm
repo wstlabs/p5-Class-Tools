@@ -4,23 +4,17 @@
 package Class::Tools;
 use warnings;
 use strict;
-use Scalar::Util qw( reftype );
 use Carp;
-
-use Exporter;
-use vars qw/ $VERSION @ISA @EXPORT_OK %EXPORT_TAGS /;
-
-BEGIN  {
-    $VERSION = '0.01b';
-    @ISA = ('Exporter');
-    @EXPORT_OK = qw/
+use Scalar::Util qw( reftype );
+use Exporter::Tidy
+    -default => [qw|
         is_loaded
         is_valid_class_name
         find_parent_classes 
-        find_common_ancestor
-    /;
-    %EXPORT_TAGS = ( 'all' => \@EXPORT_OK );
-}
+    |]
+;
+
+our $VERSION = '0.001';
 
 #
 # similar to Class::MOP::is_class_loaded, but a bit simpler 
@@ -54,14 +48,7 @@ sub find_parent_classes  {
     ()
 }
 
-# finds the putative common ancestor between two objects.
-# XXX an early version of this function has since been deprecated,
-# in part because we'd like to handle certan corner cases more 
-# properly; and because we really ought to have some unit tests.
-sub find_common_ancestor  {
-    my ($obj1,$obj2) = @_;
-    confess "deprecated" 
-}
+__END__
 
 
 =head1 NAME
@@ -70,11 +57,7 @@ Class::Tools - grab bag of metaprogramming functions
 
 =head1 VERSION
 
-Version 0.01
-
 =cut
-
-our $VERSION = '0.01';
 
 
 =head1 SYNOPSIS
