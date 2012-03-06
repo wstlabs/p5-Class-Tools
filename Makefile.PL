@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME                => 'Class::Tools',
-    AUTHOR              => q{highlinelabs <nobody@null.org>},
+    AUTHOR              => q{WST <nobody@null.org>},
     VERSION_FROM        => 'lib/Class/Tools.pm',
     ABSTRACT_FROM       => 'lib/Class/Tools.pm',
     ($ExtTools::MakeMaker::VERSION >= 6.3002
