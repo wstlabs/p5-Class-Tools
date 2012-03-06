@@ -19,11 +19,9 @@ our $VERSION = '0.001';
 #
 # similar to Class::MOP::is_class_loaded, but a bit simpler 
 sub is_loaded  {
-    my $class = shift;
+    my $class = shift // return '';
     no strict 'refs';
-    is_valid_class_name($class) ?
-        scalar keys %{"$class\::"} ? 1 : undef
-    : undef
+    scalar keys %{"$class\::"} ? 1 : '' 
 }
 
 sub is_valid_class_name {
